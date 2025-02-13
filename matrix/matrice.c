@@ -1,5 +1,9 @@
 #include "matrice.h"
 
+void getData(char *filename, float ***m, int row, int col){
+    printf("getData\n");
+}
+
 void display(float **m, int row, int col)
 {
     for (int i = 0; i < row; i++)
