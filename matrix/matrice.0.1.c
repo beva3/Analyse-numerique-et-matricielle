@@ -27,20 +27,6 @@ void init_2d(MATRIX *m, int row, int col){
             (*m).matrix[i][j] = 0;
 }
 
-MATRIX traspose(MATRIX m){
-    // trp
-    MATRIX trp = {NULL, 0, 0};
-    init_2d(&trp, m.row, m.col);
-
-    printf("Transpose ...\n");
-    for (int i = 0; i < m.row; i++)
-        for (int j = 0; j < m.col; j++)
-            trp.matrix[i][j] = m.matrix[j][i];
-
-    // return trp
-    return trp;
-}
-
 void get_matrix(MATRIX *m, char *fname)
 {
     printf("Get matrix in %s\n", fname);
@@ -66,4 +52,28 @@ void display(MATRIX m){
     for (int i = 0; i < m.row; i++)
         for (int j = 0; j < m.col; j++)
             printf("%3g%c", m.matrix[i][j], (j == m.col - 1) ? '\n' : ' ');
+}
+
+MATRIX traspose(MATRIX m){
+    // trp
+    MATRIX trp = {NULL, 0, 0};
+    init_2d(&trp, m.row, m.col);
+
+    printf("Transpose ...\n");
+    for (int i = 0; i < m.row; i++)
+        for (int j = 0; j < m.col; j++)
+            trp.matrix[i][j] = m.matrix[j][i];
+
+    // return trp
+    return trp;
+}
+
+MATRIX sum(MATRIX *m1, MATRIX *m2){
+    if (m1->row != m2->row || m1->col != m2->col)
+        return (MATRIX){NULL}; // matrices must have the same dimensions   
+    
+    MATRIX s = {NULL, 0, 0};
+    init_2d(&s, m1->row, m1->col);
+
+    return
 }
