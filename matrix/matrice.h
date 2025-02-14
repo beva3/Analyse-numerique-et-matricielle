@@ -14,6 +14,7 @@ Matrice* sum_(Matrice *m1, Matrice *m2);
 Matrice* product_(Matrice *m1, Matrice *m2);
 void getData_(char *filename, Matrice *m);
 void displayMatrice(Matrice *m);
+Matrice transpose(Matrice m);
 
 void getData(char *filename, float ***m, int row, int col);
 // float **sum(float **m1, int r1, int l1, float **m2, int r2, int l2);

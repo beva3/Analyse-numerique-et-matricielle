@@ -34,6 +34,8 @@ void getData_(char *filename, Matrice *m){
     for (int i = 0; i < m->row; i++)
         for (int j = 0; j < m->col; j++)
             fscanf(f, "%f,", &m->data[i][j]);
+    
+    printf("read successfull\n");
 
     fclose(f);
 }
@@ -45,6 +47,7 @@ void getData_(char *filename, Matrice *m){
 // }
 
 void displayMatrice(Matrice *m){
+    printf("size = %d X %d\n", m->row, m->col);
     for (int i = 0; i < m->row; i++)
         for (int j = 0; j < m->col; j++)
             printf("%2g%c", m->data[i][j], (j == m->col - 1) ? '\n' : ' ');
@@ -155,4 +158,14 @@ void initMatrice(float ***m, int row, int col){
             (*m)[i][j] = 0;
 
     printf("Memory allocated successfully : matrix %d x %d\n", row, col);
+}
+
+Matrice transpose(Matrice m){
+    Matrice t;
+    t.row = m.col; 
+    t.col = m.row;
+
+    printf("Transpose matrix\n");
+
+    return t;
 }

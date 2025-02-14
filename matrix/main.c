@@ -1,7 +1,6 @@
 #include "./matrice.h"
 
-int main()
-{
+int main(){
 
     float **matrix = NULL;
     float **matrix2 = NULL;
@@ -14,15 +13,17 @@ int main()
     Matrice *m2 = sum_(&a, &b);
     Matrice *m3 = product_(&a, &b);
 
-    displayMatrice(m2);
-    displayMatrice(m3);
+    // displayMatrice(m2);
+    // displayMatrice(m3);
 
 
     // Matrice *matrix = (Matrice *)malloc(sizeof(Matrice));
     // Matrice *matrix2 = (Matrice *)malloc(sizeof(Matrice));
     // getData_("data1.txt", matrix);
     // getData_("data2.txt", matrix2);
+    // displayMatrice(matrix);
 
+    Matrice t = transpose(*m2);
     // clean memory
 
     return 0;
