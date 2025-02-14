@@ -27,8 +27,7 @@ void init_2d(MATRIX *m, int row, int col){
             (*m).matrix[i][j] = 0;
 }
 
-void get_matrix(MATRIX *m, char *fname)
-{
+void get_matrix(MATRIX *m, char *fname){
     printf("Get matrix in %s\n", fname);
     FILE *f = fopen(fname, "r");
     if (f == NULL)
@@ -79,4 +78,22 @@ MATRIX sum(MATRIX *m1, MATRIX *m2){
             s.matrix[i][j] = m1->matrix[i][j] + m2->matrix[i][j];
         
     return s;
+}
+
+// product
+MATRIX prd(MATRIX *m1, MATRIX *m2){
+    if (m1->row != m2->row || m1->col != m2->col)
+        return (MATRIX){NULL}; // matrices must have the same dimensions   
+    
+    MATRIX prd = {NULL, 0, 0};
+    init_2d(&prd, m1->row, m1->col);
+
+    for (int i = 0; i < prd.row; i++)
+        for (int j = 0; j < prd.col; j++){
+            prd.matrix[i][j] = 0; // init sum by 0
+            for (int k = 0; k < m1->col; k++)
+               prd.matrix[i][j] += m1->matrix[i][k] * m2->matrix[k][j];
+        }    
+
+    return prd;
 }

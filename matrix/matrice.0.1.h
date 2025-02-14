@@ -18,5 +18,6 @@ void display(MATRIX m);
 // operation
 MATRIX traspose(MATRIX m);
 MATRIX sum(MATRIX *m1, MATRIX *m2);
+MATRIX prd(MATRIX *m1, MATRIX *m2);
 
 #endif
