@@ -19,5 +19,7 @@ void display(MATRIX m);
 MATRIX traspose(MATRIX m);
 MATRIX sum(MATRIX *m1, MATRIX *m2);
 MATRIX prd(MATRIX *m1, MATRIX *m2);
+MATRIX triangle_sup(MATRIX *m);
+MATRIX triangle_inf(MATRIX *m);
 
 #endif

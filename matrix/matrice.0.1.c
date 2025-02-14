@@ -97,3 +97,33 @@ MATRIX prd(MATRIX *m1, MATRIX *m2){
 
     return prd;
 }
+
+MATRIX triangle_sup(MATRIX *m){
+    MATRIX result = {NULL, 0, 0};
+    init_2d(&result, m->row, m->col);
+
+    for (int i = 0; i < m->row ; i++)
+        for (int j = 0; j < m->col; j++){
+            if(i > j){
+                result.matrix[i][j] = 0;
+            }else{
+                result.matrix[i][j] = m->matrix[i][j];
+            }
+        }
+    return result;
+}
+
+MATRIX triangle_inf(MATRIX *m){
+    MATRIX result = {NULL, 0, 0};
+    init_2d(&result, m->row, m->col);
+
+    for (int i = 0; i < m->row ; i++)
+        for (int j = 0; j < m->col; j++){
+            if(i < j){
+                result.matrix[i][j] = 0;
+            }else{
+                result.matrix[i][j] = m->matrix[i][j];
+            }
+        }
+    return result;
+}
