@@ -74,6 +74,9 @@ MATRIX sum(MATRIX *m1, MATRIX *m2){
     
     MATRIX s = {NULL, 0, 0};
     init_2d(&s, m1->row, m1->col);
-
-    return
+    for (int  i = 0; i < s.row; i++)
+        for (int j = 0; j < s.col; j++)
+            s.matrix[i][j] = m1->matrix[i][j] + m2->matrix[i][j];
+        
+    return s;
 }

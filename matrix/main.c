@@ -7,7 +7,8 @@ int main(){
     // if correct 
     get_matrix(&m,"data1.txt");
     display(m);
-    display(traspose(m));
+    // display(traspose(m));
+    display(sum(&m, &m));
 
 
     // if not correct ...
