@@ -21,5 +21,6 @@ MATRIX sum(MATRIX *m1, MATRIX *m2);
 MATRIX prd(MATRIX *m1, MATRIX *m2);
 MATRIX triangle_sup(MATRIX *m);
 MATRIX triangle_inf(MATRIX *m);
+MATRIX identity(int order);
 
 #endif

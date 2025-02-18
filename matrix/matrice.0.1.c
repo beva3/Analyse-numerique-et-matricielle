@@ -127,3 +127,15 @@ MATRIX triangle_inf(MATRIX *m){
         }
     return result;
 }
+
+MATRIX identity(int order){
+    MATRIX result = {NULL, 0, 0};
+    init_2d(&result, order, order);
+
+    for (int i = 0; i < result.row; i++)
+        for (int j = 0; j < result.col; j++)
+            if(i == j)
+                result.matrix[i][j] = 1;
+
+    return result;
+}

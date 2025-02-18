@@ -19,6 +19,7 @@ int main(){
 
     display(prd(&m,&m1));
     display(prd(&m1,&m));
+    display(identity(4));
 
     // if not correct ...
     return 0;
